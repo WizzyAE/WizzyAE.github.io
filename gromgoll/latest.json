@@ -1,25 +1,36 @@
 {
   "schemaVersion": 1,
   "app": "GromGoll",
-  "version": "1.0.0",
-  "publishedAt": "2026-10-29T20:34:51Z",
-  "notes": [],
+  "version": "1.0.1",
+  "publishedAt": "2026-10-29T21:16:33Z",
+  "notes": [
+    "Nove verzije stižu same: kad izađe novija, GromGoll ponudi Ažuriraj.",
+    "Na Androidu (Termux) se nova verzija preuzme sama i instalira pri sljedećem pokretanju."
+  ],
   "platforms": {
     "termux": {
-      "version": "1.0.0",
-      "url": "https://github.com/WizzyAE/GromGoll/releases/download/v1.0.0/GromGoll-Android-Termux-1.0.0.zip",
-      "sha256": "6ff2b0ee357a6bd93e68d7569b5f60a0173608e4eed466a28c6394f23f13cfb0",
-      "bytes": 3787705,
-      "name": "GromGoll-Android-Termux-1.0.0.zip",
-      "publishedAt": "2026-10-29T20:34:51Z"
+      "version": "1.0.1",
+      "url": "https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Android-Termux-1.0.1.zip",
+      "sha256": "136b352cc13db9c811b0dc3cd132877b4572cf93475424e9ff5d9b46b556f36c",
+      "bytes": 3790515,
+      "name": "GromGoll-Android-Termux-1.0.1.zip",
+      "publishedAt": "2026-10-29T21:16:33Z"
     },
     "win32": {
-      "version": "1.0.0",
-      "url": "https://github.com/WizzyAE/GromGoll/releases/download/v1.0.0/GromGoll-Setup-1.0.0.exe",
-      "sha256": "1e4d9996dc9f9b26264cc3603ff39e670f6ba54916fcf601e232411ea35ca7c9",
-      "bytes": 38871552,
-      "name": "GromGoll-Setup-1.0.0.exe",
-      "publishedAt": "2026-10-29T20:34:51Z"
+      "version": "1.0.1",
+      "url": "https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Setup-1.0.1.exe",
+      "sha256": "39b87917ee3755fe7aa520ce138fcbcd136466da34d3ecdb6f49cd0cf813777d",
+      "bytes": 38875136,
+      "name": "GromGoll-Setup-1.0.1.exe",
+      "publishedAt": "2026-10-29T21:16:33Z"
+    },
+    "termux-update": {
+      "version": "1.0.1",
+      "url": "https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Termux-1.0.1.tar",
+      "sha256": "a415efdb6b974ef0a9ae2b2f8846e8be0517c304f05f7896225d551d79253eb7",
+      "bytes": 7227904,
+      "name": "GromGoll-Termux-1.0.1.tar",
+      "publishedAt": "2026-10-29T21:16:33Z"
     }
   }
 }

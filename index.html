@@ -148,7 +148,7 @@ const date = iso => new Date(iso).toLocaleDateString('hr-HR', { day: 'numeric', 
 const clean = v => String(v || '').replace(/^v/i, '');
 // Same bullet rules as the apps' own "Novo u verziji".
 const notes = body => (body || '').split(/\r?\n/).map(l => l.replace(/^\s*(?:[-*•]|\d+\.)\s*/, '').trim()).filter(l => l && !l.startsWith('#')).slice(0, 12);
-const kind = name => /\.apk$|android/i.test(name) ? 'android' : /mac|darwin|\.dmg$/i.test(name) ? 'mac' : /\.exe$|\.msi$/i.test(name) ? 'windows' : null;
+const kind = name => /\.tar$/i.test(name) ? null : /\.apk$|android/i.test(name) ? 'android' : /mac|darwin|\.dmg$/i.test(name) ? 'mac' : /\.exe$|\.msi$/i.test(name) ? 'windows' : null;
 
 let config = { apps: [] };
 function log(entry) {
@@ -165,7 +165,7 @@ async function latest(app, repo) {
   if (res.ok) {
     const feed = await res.json();
     return { version: feed.version, date: feed.publishedAt, notes: feed.notes || [],
-      files: Object.entries(feed.platforms).map(([p, f]) => ({ kind: KIND[p], name: f.name, url: f.url, size: f.bytes, version: f.version, termux: p === 'termux' })) };
+      files: Object.entries(feed.platforms).map(([p, f]) => ({ kind: KIND[p], name: f.name, url: f.url, size: f.bytes, version: f.version, termux: p === 'termux' })).filter(f => f.kind) };
   }
   const api = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, { headers: { Accept: 'application/vnd.github+json' } });
   if (!api.ok) throw new Error(api.status);
