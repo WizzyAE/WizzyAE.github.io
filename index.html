@@ -4,119 +4,110 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#060a16">
+<meta name="theme-color" content="#070b18">
 <title>GROM appovi</title>
 <link rel="icon" href="icons/grom.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #060a16; --panel: rgba(18, 26, 48, .72); --panel-solid: #111a31; --line: rgba(140, 165, 230, .14);
-    --text: #eef2ff; --muted: #93a0c4; --faint: #5d6a90; --radius: 22px;
+    --bg: #070b18; --panel: #0f172c; --panel-2: #141e38; --line: #1e2a48;
+    --text: #eef2ff; --muted: #93a0c4; --faint: #5d6a90; --radius: 20px;
     color-scheme: dark;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
-    font: 15px/1.55 Inter, system-ui, "Segoe UI", sans-serif; overflow-x: hidden;
-  }
-  .glow { position: fixed; inset: -20vmax; z-index: -1; pointer-events: none; filter: blur(80px); opacity: .55;
+    margin: 0; min-height: 100vh; color: var(--text); overflow-x: hidden;
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    /* Static, unblurred gradients: nothing is repainted while scrolling. */
     background:
-      radial-gradient(34vmax 30vmax at 18% 12%, #1f4dff55, transparent 70%),
-      radial-gradient(30vmax 26vmax at 85% 30%, #e5174255, transparent 70%),
-      radial-gradient(32vmax 28vmax at 40% 95%, #12c27a40, transparent 70%);
-    animation: drift 24s ease-in-out infinite alternate; }
-  @keyframes drift { to { transform: translate3d(3vmax, -2vmax, 0) scale(1.05); } }
-  .wrap { width: min(1080px, 100%); margin: 0 auto; padding: 0 16px; }
+      radial-gradient(900px 520px at 10% -10%, rgba(31, 77, 255, .22), transparent 70%),
+      radial-gradient(800px 480px at 100% 0%, rgba(229, 23, 66, .16), transparent 70%),
+      var(--bg) no-repeat;
+  }
+  .wrap { width: min(1040px, 100%); margin: 0 auto; padding: 0 16px; }
 
-  nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-    background: rgba(6, 10, 22, .6); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top); }
-  nav .wrap { display: flex; align-items: center; gap: 10px; height: 60px; }
-  nav img { width: 30px; height: 30px; }
+  nav { border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top); }
+  nav .wrap { display: flex; align-items: center; gap: 10px; height: 58px; }
+  nav img { width: 28px; height: 28px; }
   nav b { font-weight: 800; letter-spacing: .06em; }
-  .chip { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 99px;
+  .chip { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 99px;
     border: 1px solid var(--line); background: var(--panel); color: var(--muted); font-size: 12.5px; white-space: nowrap; }
-  .chip i { width: 7px; height: 7px; border-radius: 50%; background: #38d98a; box-shadow: 0 0 10px #38d98a; }
+  .chip i { width: 7px; height: 7px; border-radius: 50%; background: #38d98a; }
 
-  header { padding: 64px 0 36px; }
-  .hello { color: var(--muted); font-weight: 500; margin: 0 0 8px; min-height: 1.5em; }
-  h1 { margin: 0; font-size: clamp(34px, 7vw, 64px); line-height: 1.03; letter-spacing: -.035em; font-weight: 800; }
-  h1 span { background: linear-gradient(100deg, #6c9bff, #c45cff 45%, #ff4d6d 75%, #34e29a); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  header p.sub { margin: 14px 0 0; color: var(--muted); font-size: clamp(15px, 2.2vw, 18px); }
+  header { padding: 48px 0 28px; }
+  .hello { color: var(--muted); font-weight: 500; margin: 0 0 6px; }
+  .hello:empty { display: none; }
+  h1 { margin: 0; font-size: clamp(32px, 7vw, 56px); line-height: 1.05; letter-spacing: -.03em; font-weight: 800; }
+  h1 span { background: linear-gradient(100deg, #6c9bff, #c45cff 45%, #ff4d6d 80%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  header p { margin: 10px 0 0; color: var(--muted); font-size: clamp(15px, 2.2vw, 17px); }
 
-  .apps { display: grid; gap: 18px; padding-bottom: 56px; }
-  .app { --accent: #3d7bff; position: relative; display: grid; grid-template-columns: auto 1fr; gap: 22px; padding: 26px;
-    border-radius: var(--radius); background: var(--panel); border: 1px solid var(--line); overflow: hidden;
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s; }
-  .app::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
-    background: radial-gradient(60% 90% at 0% 0%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%); }
-  .app:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
-  .icon { position: relative; width: 96px; height: 96px; border-radius: 24px; flex: none;
-    box-shadow: 0 18px 40px -12px color-mix(in srgb, var(--accent) 70%, transparent); }
-  .body { position: relative; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
-  .title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
-  h2 { margin: 0; font-size: 26px; letter-spacing: -.02em; }
-  .ver { font-size: 12.5px; color: var(--muted); padding: 3px 10px; border-radius: 99px; background: rgba(255,255,255,.05); border: 1px solid var(--line); }
+  .apps { display: grid; gap: 16px; padding-bottom: 48px; }
+  .app { --accent: #3d7bff; display: grid; grid-template-columns: auto 1fr; gap: 22px; padding: 24px;
+    border-radius: var(--radius); border: 1px solid var(--line);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, var(--panel)), var(--panel) 45%); }
+  .icon { width: 88px; height: 88px; border-radius: 22px; }
+  .body { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+  .title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+  h2 { margin: 0; font-size: 24px; letter-spacing: -.02em; }
+  .ver { font-size: 12.5px; color: var(--muted); }
   .desc { margin: -6px 0 0; color: var(--muted); }
 
-  .dl { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
-  .btn { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; color: var(--text); text-decoration: none;
-    background: rgba(255,255,255,.045); border: 1px solid var(--line); transition: background .2s, transform .2s, box-shadow .2s; }
-  .btn:hover { background: rgba(255,255,255,.09); transform: translateY(-1px); }
+  .dl { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); }
+  .btn { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 10px 14px; border-radius: 14px;
+    color: var(--text); text-decoration: none; background: var(--panel-2); border: 1px solid var(--line);
+    -webkit-tap-highlight-color: transparent; }
   .btn svg { width: 22px; height: 22px; flex: none; }
   .btn span { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
   .btn strong { font-weight: 600; }
   .btn small { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .btn.main { background: var(--accent); border-color: transparent; box-shadow: 0 10px 30px -10px var(--accent); }
-  .btn.main small { color: rgba(255,255,255,.82); }
-  .btn.main:hover { filter: brightness(1.08); }
+  .btn.main { background: var(--accent); border-color: transparent; }
+  .btn.main small { color: rgba(255,255,255,.85); }
+  .btn:active { opacity: .8; }
+  @media (hover: hover) {
+    .btn { transition: background-color .15s, filter .15s; }
+    .btn:hover { background: #1a2647; }
+    .btn.main:hover { background: var(--accent); filter: brightness(1.1); }
+  }
   .hint { margin: 0; font-size: 13px; color: var(--muted); }
   .none { margin: 0; font-size: 13.5px; color: var(--faint); }
 
-  details { border-top: 1px solid var(--line); padding-top: 12px; }
-  summary { cursor: pointer; color: var(--muted); font-size: 13.5px; font-weight: 500; list-style: none; display: inline-flex; align-items: center; gap: 6px; }
+  details { border-top: 1px solid var(--line); padding-top: 10px; }
+  summary { cursor: pointer; color: var(--muted); font-size: 13.5px; font-weight: 500; list-style: none; padding: 4px 0; }
   summary::-webkit-details-marker { display: none; }
-  summary::before { content: "›"; display: inline-block; transition: transform .2s; font-size: 18px; line-height: 1; }
-  details[open] summary::before { transform: rotate(90deg); }
-  details ul { margin: 10px 0 0; padding-left: 18px; color: #cdd5ef; }
+  summary::before { content: "› "; }
+  details[open] summary::before { content: "⌄ "; }
+  details ul { margin: 6px 0 0; padding-left: 18px; color: #cdd5ef; }
   details li { margin: 4px 0; }
-
-  .skel { height: 48px; border-radius: 14px; background: linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,255,255,.09), rgba(255,255,255,.04)); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
-  @keyframes shimmer { to { background-position: -200% 0; } }
-  footer { padding: 0 0 40px; color: var(--faint); font-size: 12.5px; text-align: center; }
-
-  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
-  .reveal.in { opacity: 1; transform: none; }
+  footer { padding: 0 0 calc(32px + env(safe-area-inset-bottom)); color: var(--faint); font-size: 12.5px; text-align: center; }
 
   @media (max-width: 640px) {
-    header { padding: 40px 0 26px; }
-    .app { grid-template-columns: 1fr; padding: 20px; gap: 16px; }
-    .icon { width: 72px; height: 72px; border-radius: 18px; }
-    .dl { grid-template-columns: 1fr; }
-    .chip { font-size: 12px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .glow, .skel { animation: none; }
-    .reveal, .app, .btn { transition: none; }
-    .reveal { opacity: 1; transform: none; }
+    header { padding: 32px 0 20px; }
+    /* Icon beside the name; everything else full width. */
+    .app { grid-template-columns: 56px 1fr; padding: 16px; gap: 12px 14px; }
+    .body { display: contents; }
+    .body > * { grid-column: 1 / -1; }
+    .body > .title { grid-column: 2; align-self: center; flex-direction: column; gap: 0; }
+    .desc { margin: 0; }
+    .icon { width: 56px; height: 56px; border-radius: 14px; }
+    h2 { font-size: 21px; }
+    .dl { grid-template-columns: 1fr 1fr; }
+    .btn.main { grid-column: 1 / -1; }
   }
 </style>
 </head>
 <body>
-<div class="glow"></div>
-<nav><div class="wrap"><img src="icons/grom.svg" alt=""><b>GROM</b><span class="chip" id="device"><i></i><span></span></span></div></nav>
+<nav><div class="wrap"><img src="icons/grom.svg" alt="" width="28" height="28"><b>GROM</b><span class="chip"><i></i><span id="device"></span></span></div></nav>
 <main class="wrap">
-  <header class="reveal">
+  <header>
     <p class="hello" id="hello"></p>
     <h1>GROM <span>appovi</span></h1>
-    <p class="sub">Zadnje verzije za Windows, Mac i Android.</p>
+    <p>Zadnje verzije za Windows, Mac i Android.</p>
   </header>
   <section class="apps" id="apps"></section>
 </main>
 <footer class="wrap">GROM</footer>
+<!-- Written by objavi.mjs from apps.json and each app's latest.json, so the page needs no further requests. -->
+<script id="data" type="application/json">{"owner":"WizzyAE","apps":[{"name":"Gromify","repo":"Gromify","desc":"Glazba na PC-u i mobitelu.","icon":"icons/gromify.png","color":"#1a84ff","latest":{"schemaVersion":1,"app":"Gromify","version":"1.5.13","publishedAt":"2026-10-29T21:33:57Z","notes":["Nova stranica Moja glazba: zalijepi linkove pjesama i playlista ili cijeli popis pjesama i preuzmi ih kao MP3.","Podržani su Spotify, YouTube, YouTube Music, Deezer, Apple Music, SoundCloud, Bandcamp, Tidal, Amazon Music i još 1000+ stranica, te CSV/TXT/M3U popisi (npr. iz Exportifyja).","Preuzimanja čekaju u redu i rade u pozadini, a pjesme se mogu spremiti u playlistu ili samo u biblioteku.","Nove verzije sada stižu s GitHuba, svima, bez obzira na to je li GROM server upaljen."],"platforms":{"android":{"version":"1.5.13","url":"https://github.com/WizzyAE/Gromify/releases/download/v1.5.13/Gromify-Android-1.5.13.apk","sha256":"da55b71e567d307271d70c31c77631c183b2b4b965f4e0e47ba923aadb68fab8","bytes":71460914,"name":"Gromify-Android-1.5.13.apk","publishedAt":"2026-10-29T21:33:57Z"},"darwin":{"version":"1.5.13","url":"https://github.com/WizzyAE/Gromify/releases/download/v1.5.13/Gromify-Setup-1.5.13-macOS.zip","sha256":"5182a9de257ab6b9befd2f0b9cf9ae1c3cb6fff1abdb095802c2d60ab9c0f002","bytes":441890489,"name":"Gromify-Setup-1.5.13-macOS.zip","publishedAt":"2026-10-29T21:33:57Z"},"win32":{"version":"1.5.13","url":"https://github.com/WizzyAE/Gromify/releases/download/v1.5.13/Gromify-Setup-1.5.13.exe","sha256":"a533073387ef52cf3a7daaff6f04a13fa2e63f20c219fbefa512539bff4458f1","bytes":484299351,"name":"Gromify-Setup-1.5.13.exe","publishedAt":"2026-10-29T21:33:57Z"}}}},{"name":"Gromflix","repo":"Gromflix","desc":"Filmovi i serije.","icon":"icons/gromflix.png","color":"#5b6cff","latest":{"schemaVersion":1,"app":"Gromflix","version":"0.3.11","publishedAt":"2026-10-29T21:17:37Z","notes":["Nove verzije stižu same na Windows, Mac i Android: Gromflix ponudi nadogradnju čim izađe.","Svaki paket se prije instalacije provjerava (SHA-256)."],"platforms":{"android":{"version":"0.3.11","url":"https://github.com/WizzyAE/Gromflix/releases/download/v0.3.11/Gromflix-Android-0.3.11.apk","sha256":"a6bf38b44733b1c10a0749509eb5be261024cd1e5b4780c4069193bc3b772eae","bytes":30585967,"name":"Gromflix-Android-0.3.11.apk","publishedAt":"2026-10-29T21:17:37Z"},"darwin":{"version":"0.3.11","url":"https://github.com/WizzyAE/Gromflix/releases/download/v0.3.11/Gromflix-Setup-0.3.11-macOS-x64.zip","sha256":"11c4d05b8bd9b7e22a737a5ca5abddc539bfda3a6021364acda49e36865f74c2","bytes":215768007,"name":"Gromflix-Setup-0.3.11-macOS-x64.zip","publishedAt":"2026-10-29T21:17:37Z"},"win32":{"version":"0.3.11","url":"https://github.com/WizzyAE/Gromflix/releases/download/v0.3.11/Gromflix-Setup-0.3.11-x64.exe","sha256":"320d3b5e21f21911f114ff24e79df414050621b94ffa3a543bc7f75fe0a437fe","bytes":261908596,"name":"Gromflix-Setup-0.3.11-x64.exe","publishedAt":"2026-10-29T21:17:37Z"}}}},{"name":"GromGoll","repo":"GromGoll","desc":"Sport uživo i TV kanali.","icon":"icons/gromgoll.png","color":"#e11844","latest":{"schemaVersion":1,"app":"GromGoll","version":"1.0.1","publishedAt":"2026-10-29T21:16:33Z","notes":["Nove verzije stižu same: kad izađe novija, GromGoll ponudi Ažuriraj.","Na Androidu (Termux) se nova verzija preuzme sama i instalira pri sljedećem pokretanju."],"platforms":{"termux":{"version":"1.0.1","url":"https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Android-Termux-1.0.1.zip","sha256":"136b352cc13db9c811b0dc3cd132877b4572cf93475424e9ff5d9b46b556f36c","bytes":3790515,"name":"GromGoll-Android-Termux-1.0.1.zip","publishedAt":"2026-10-29T21:16:33Z"},"win32":{"version":"1.0.1","url":"https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Setup-1.0.1.exe","sha256":"39b87917ee3755fe7aa520ce138fcbcd136466da34d3ecdb6f49cd0cf813777d","bytes":38875136,"name":"GromGoll-Setup-1.0.1.exe","publishedAt":"2026-10-29T21:16:33Z"},"termux-update":{"version":"1.0.1","url":"https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Termux-1.0.1.tar","sha256":"a415efdb6b974ef0a9ae2b2f8846e8be0517c304f05f7896225d551d79253eb7","bytes":7227904,"name":"GromGoll-Termux-1.0.1.tar","publishedAt":"2026-10-29T21:16:33Z"}}}}]}</script>
 <script>
 const ICONS = {
   windows: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7.1H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg>',
@@ -129,6 +120,7 @@ const HINT = {
   android: 'Kad Android pita, dopusti instalaciju iz ovog preglednika.',
   mac: 'Raspakiraj ZIP i pokreni installer desnim klikom › Otvori.'
 };
+const KIND = { win32: 'windows', darwin: 'mac', android: 'android', termux: 'android' };
 
 const ua = navigator.userAgent;
 const device = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) ? 'ios'
@@ -141,16 +133,12 @@ const fromLink = (params.get('za') || '').trim().slice(0, 60);
 if (fromLink) { store.set('grom-za', fromLink); params.delete('za'); history.replaceState(null, '', location.pathname + (params.size ? '?' + params : '') + location.hash); }
 const who = fromLink || store.get('grom-za') || '';
 
+const config = JSON.parse(document.getElementById('data').textContent);
 const el = (tag, props = {}, ...kids) => { const n = Object.assign(document.createElement(tag), props); n.append(...kids.filter(k => k != null && k !== false)); return n; };
 const svg = html => { const t = document.createElement('template'); t.innerHTML = html; return t.content.firstChild; };
 const size = b => b >= 1e9 ? (b / 1e9).toFixed(1) + ' GB' : Math.max(1, Math.round(b / 1e6)) + ' MB';
 const date = iso => new Date(iso).toLocaleDateString('hr-HR', { day: 'numeric', month: 'long', year: 'numeric' });
-const clean = v => String(v || '').replace(/^v/i, '');
-// Same bullet rules as the apps' own "Novo u verziji".
-const notes = body => (body || '').split(/\r?\n/).map(l => l.replace(/^\s*(?:[-*•]|\d+\.)\s*/, '').trim()).filter(l => l && !l.startsWith('#')).slice(0, 12);
-const kind = name => /\.tar$/i.test(name) ? null : /\.apk$|android/i.test(name) ? 'android' : /mac|darwin|\.dmg$/i.test(name) ? 'mac' : /\.exe$|\.msi$/i.test(name) ? 'windows' : null;
 
-let config = { apps: [] };
 function log(entry) {
   if (!config.log) return;
   const body = JSON.stringify({ za: who, uredaj: LABEL[device], preglednik: ua.slice(0, 180), ...entry });
@@ -158,72 +146,35 @@ function log(entry) {
   catch { fetch(config.log, { method: 'POST', mode: 'no-cors', body, keepalive: true }).catch(() => {}); }
 }
 
-const KIND = { win32: 'windows', darwin: 'mac', android: 'android', termux: 'android' };
-// The app's update feed (<app>/latest.json, written by objavi.mjs); GitHub's API only when it is missing.
-async function latest(app, repo) {
-  const res = await fetch(app.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '/latest.json', { cache: 'no-cache' });
-  if (res.ok) {
-    const feed = await res.json();
-    return { version: feed.version, date: feed.publishedAt, notes: feed.notes || [],
-      files: Object.entries(feed.platforms).map(([p, f]) => ({ kind: KIND[p], name: f.name, url: f.url, size: f.bytes, version: f.version, termux: p === 'termux' })).filter(f => f.kind) };
-  }
-  const api = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, { headers: { Accept: 'application/vnd.github+json' } });
-  if (!api.ok) throw new Error(api.status);
-  const rel = await api.json();
-  return { version: clean(rel.tag_name), date: rel.published_at, notes: notes(rel.body),
-    files: rel.assets.map(a => ({ kind: kind(a.name), name: a.name, url: a.browser_download_url, size: a.size, version: a.name.match(/\d+\.\d+\.\d+/)?.[0], termux: /termux/i.test(a.name) })).filter(f => f.kind) };
-}
-
-function card(app, owner) {
-  const repo = app.repo.includes('/') ? app.repo : owner + '/' + app.repo;
-  const ver = el('span', { className: 'ver', textContent: '…' });
-  const body = el('div', { className: 'body' },
-    el('div', { className: 'title' }, el('h2', { textContent: app.name }), ver),
-    app.desc ? el('p', { className: 'desc', textContent: app.desc }) : null,
-    el('div', { className: 'skel' }));
-  const box = el('article', { className: 'app reveal' }, el('img', { className: 'icon', src: app.icon || 'icons/grom.svg', alt: '' }), body);
-  if (app.color) box.style.setProperty('--accent', app.color);
-
-  latest(app, repo).then(rel => {
-    const version = rel.version;
-    ver.textContent = `${version} · ${date(rel.date)}`;
-    const files = rel.files.filter((a, i, all) => all.findIndex(b => b.kind === a.kind) === i);
-    files.sort((a, b) => (b.kind === device) - (a.kind === device));
-    const buttons = files.map((a, i) => {
-      const extra = [size(a.size), a.version && a.version !== version ? 'verzija ' + a.version : '', a.termux ? 'Termux' : ''].filter(Boolean).join(' · ');
-      const link = el('a', { className: 'btn' + (a.kind === device || (i === 0 && !files.some(f => f.kind === device)) ? ' main' : ''), href: a.url },
-        svg(ICONS[a.kind]), el('span', {}, el('strong', { textContent: LABEL[a.kind] }), el('small', { textContent: extra })));
-      link.addEventListener('click', () => log({ radnja: 'preuzimanje', app: app.name, verzija: a.version || version, platforma: LABEL[a.kind], datoteka: a.name }));
-      return link;
-    });
-    const mine = files.find(a => a.kind === device);
-    body.querySelector('.skel').replaceWith(buttons.length ? el('div', { className: 'dl' }, ...buttons) : el('p', { className: 'none', textContent: 'Još nema datoteka za preuzimanje.' }));
-    if (mine && HINT[device]) body.append(el('p', { className: 'hint', textContent: HINT[device] }));
-    else if (!mine && (device === 'ios' || device === 'android' || device === 'mac')) body.append(el('p', { className: 'none', textContent: `Nema verzije za ${LABEL[device]}.` }));
-    const list = rel.notes;
-    if (list.length) body.append(el('details', {}, el('summary', { textContent: 'Novo u ovoj verziji' }), el('ul', {}, ...list.map(t => el('li', { textContent: t })))));
-  }).catch(e => {
-    ver.textContent = String(e.message) === '404' ? 'uskoro' : 'GitHub ne odgovara';
-    body.querySelector('.skel').replaceWith(el('a', { className: 'btn', href: `https://github.com/${repo}/releases` }, el('span', {}, el('strong', { textContent: 'Otvori na GitHubu' }))));
+function card(app) {
+  const feed = app.latest;
+  const files = feed ? Object.entries(feed.platforms).map(([p, f]) => ({ ...f, kind: KIND[p], termux: p === 'termux' })).filter(f => f.kind) : [];
+  files.sort((a, b) => (b.kind === device) - (a.kind === device));
+  const mine = files.find(f => f.kind === device);
+  const buttons = files.map((f, i) => {
+    const extra = [size(f.bytes), f.version !== feed.version ? 'verzija ' + f.version : '', f.termux ? 'Termux' : ''].filter(Boolean).join(' · ');
+    const link = el('a', { className: 'btn' + (f === mine || (!mine && i === 0) ? ' main' : ''), href: f.url },
+      svg(ICONS[f.kind]), el('span', {}, el('strong', { textContent: LABEL[f.kind] }), el('small', { textContent: extra })));
+    link.addEventListener('click', () => log({ radnja: 'preuzimanje', app: app.name, verzija: f.version, platforma: LABEL[f.kind], datoteka: f.name }));
+    return link;
   });
+  const box = el('article', { className: 'app' },
+    el('img', { className: 'icon', src: app.icon || 'icons/grom.svg', alt: '', width: 88, height: 88, decoding: 'async' }),
+    el('div', { className: 'body' },
+      el('div', { className: 'title' }, el('h2', { textContent: app.name }), el('span', { className: 'ver', textContent: feed ? `${feed.version} · ${date(feed.publishedAt)}` : 'uskoro' })),
+      app.desc ? el('p', { className: 'desc', textContent: app.desc }) : null,
+      buttons.length ? el('div', { className: 'dl' }, ...buttons) : el('p', { className: 'none', textContent: 'Još nema datoteka za preuzimanje.' }),
+      mine && HINT[device] ? el('p', { className: 'hint', textContent: HINT[device] })
+        : feed && !mine && device !== 'other' ? el('p', { className: 'none', textContent: `Nema verzije za ${LABEL[device]}.` }) : null,
+      feed?.notes?.length ? el('details', {}, el('summary', { textContent: 'Novo u ovoj verziji' }), el('ul', {}, ...feed.notes.map(t => el('li', { textContent: t })))) : null));
+  if (app.color) box.style.setProperty('--accent', app.color);
   return box;
 }
 
-const reveal = 'IntersectionObserver' in window
-  ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); reveal.unobserve(e.target); } }), { threshold: .12 })
-  : { observe: n => n.classList.add('in') };
-
-(async () => {
-  document.querySelector('#device span').textContent = LABEL[device];
-  if (who) document.getElementById('hello').textContent = `Bok, ${who}`;
-  document.querySelectorAll('.reveal').forEach(n => reveal.observe(n));
-  config = await (await fetch('apps.json', { cache: 'no-store' })).json();
-  // On owner.github.io the owner is the hostname; apps.json names it for local previews.
-  const owner = location.hostname.endsWith('.github.io') ? location.hostname.split('.')[0] : config.owner;
-  const root = document.getElementById('apps');
-  config.apps.forEach((app, i) => { const c = card(app, owner); c.style.transitionDelay = i * 80 + 'ms'; root.append(c); reveal.observe(c); });
-  if (who && !sessionStorage.getItem('grom-visit')) { try { sessionStorage.setItem('grom-visit', '1'); } catch {} log({ radnja: 'posjet' }); }
-})();
+document.getElementById('device').textContent = LABEL[device];
+document.getElementById('hello').textContent = who ? `Bok, ${who}` : '';
+document.getElementById('apps').append(...config.apps.map(card));
+if (who) { try { if (!sessionStorage.getItem('grom-visit')) { sessionStorage.setItem('grom-visit', '1'); log({ radnja: 'posjet' }); } } catch {} }
 </script>
 </body>
 </html>
