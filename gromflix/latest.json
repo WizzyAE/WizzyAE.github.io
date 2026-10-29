@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "app": "Gromflix",
+  "version": "0.3.10",
+  "publishedAt": "2026-10-29T20:35:19Z",
+  "notes": [],
+  "platforms": {
+    "android": {
+      "version": "0.3.5",
+      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.10/Gromflix-Android-0.3.5.apk",
+      "sha256": "6d163323993cd8ff0a821c21951e38728dc35442097cd11a25a213b77eeede6c",
+      "bytes": 30577775,
+      "name": "Gromflix-Android-0.3.5.apk",
+      "publishedAt": "2026-10-29T20:35:19Z"
+    },
+    "darwin": {
+      "version": "0.3.10",
+      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.10/Gromflix-Setup-0.3.10-macOS-x64.zip",
+      "sha256": "af55ca4cef780e40f7417af9054b1bf1698bf690b2851889beb33ee235386715",
+      "bytes": 220156911,
+      "name": "Gromflix-Setup-0.3.10-macOS-x64.zip",
+      "publishedAt": "2026-10-29T20:35:19Z"
+    },
+    "win32": {
+      "version": "0.3.10",
+      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.10/Gromflix-Setup-0.3.10-x64.exe",
+      "sha256": "2efc4eddee9bdbc5190481cbece00ff9afcc203da5f39dcde2912951b463b776",
+      "bytes": 261907793,
+      "name": "Gromflix-Setup-0.3.10-x64.exe",
+      "publishedAt": "2026-10-29T20:35:19Z"
+    }
+  }
+}

@@ -158,14 +158,20 @@ function log(entry) {
   catch { fetch(config.log, { method: 'POST', mode: 'no-cors', body, keepalive: true }).catch(() => {}); }
 }
 
-async function latest(repo) {
-  const key = 'rel:' + repo;
-  try { const hit = JSON.parse(sessionStorage.getItem(key)); if (hit && Date.now() - hit.at < 600000) return hit.data; } catch {}
-  const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, { headers: { Accept: 'application/vnd.github+json' } });
-  if (!res.ok) throw new Error(res.status);
-  const data = await res.json();
-  try { sessionStorage.setItem(key, JSON.stringify({ at: Date.now(), data })); } catch {}
-  return data;
+const KIND = { win32: 'windows', darwin: 'mac', android: 'android', termux: 'android' };
+// The app's update feed (<app>/latest.json, written by objavi.mjs); GitHub's API only when it is missing.
+async function latest(app, repo) {
+  const res = await fetch(app.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '/latest.json', { cache: 'no-cache' });
+  if (res.ok) {
+    const feed = await res.json();
+    return { version: feed.version, date: feed.publishedAt, notes: feed.notes || [],
+      files: Object.entries(feed.platforms).map(([p, f]) => ({ kind: KIND[p], name: f.name, url: f.url, size: f.bytes, version: f.version, termux: p === 'termux' })) };
+  }
+  const api = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, { headers: { Accept: 'application/vnd.github+json' } });
+  if (!api.ok) throw new Error(api.status);
+  const rel = await api.json();
+  return { version: clean(rel.tag_name), date: rel.published_at, notes: notes(rel.body),
+    files: rel.assets.map(a => ({ kind: kind(a.name), name: a.name, url: a.browser_download_url, size: a.size, version: a.name.match(/\d+\.\d+\.\d+/)?.[0], termux: /termux/i.test(a.name) })).filter(f => f.kind) };
 }
 
 function card(app, owner) {
@@ -178,24 +184,23 @@ function card(app, owner) {
   const box = el('article', { className: 'app reveal' }, el('img', { className: 'icon', src: app.icon || 'icons/grom.svg', alt: '' }), body);
   if (app.color) box.style.setProperty('--accent', app.color);
 
-  latest(repo).then(rel => {
-    const version = clean(rel.tag_name);
-    ver.textContent = `${version} · ${date(rel.published_at)}`;
-    const files = rel.assets.map(a => ({ ...a, kind: kind(a.name) })).filter((a, i, all) => a.kind && all.findIndex(b => kind(b.name) === a.kind) === i);
+  latest(app, repo).then(rel => {
+    const version = rel.version;
+    ver.textContent = `${version} · ${date(rel.date)}`;
+    const files = rel.files.filter((a, i, all) => all.findIndex(b => b.kind === a.kind) === i);
     files.sort((a, b) => (b.kind === device) - (a.kind === device));
     const buttons = files.map((a, i) => {
-      const own = a.name.match(/\d+\.\d+\.\d+/)?.[0];
-      const extra = [size(a.size), own && own !== version ? 'verzija ' + own : '', /termux/i.test(a.name) ? 'Termux' : ''].filter(Boolean).join(' · ');
-      const link = el('a', { className: 'btn' + (a.kind === device || (i === 0 && !files.some(f => f.kind === device)) ? ' main' : ''), href: a.browser_download_url },
+      const extra = [size(a.size), a.version && a.version !== version ? 'verzija ' + a.version : '', a.termux ? 'Termux' : ''].filter(Boolean).join(' · ');
+      const link = el('a', { className: 'btn' + (a.kind === device || (i === 0 && !files.some(f => f.kind === device)) ? ' main' : ''), href: a.url },
         svg(ICONS[a.kind]), el('span', {}, el('strong', { textContent: LABEL[a.kind] }), el('small', { textContent: extra })));
-      link.addEventListener('click', () => log({ radnja: 'preuzimanje', app: app.name, verzija: own || version, platforma: LABEL[a.kind], datoteka: a.name }));
+      link.addEventListener('click', () => log({ radnja: 'preuzimanje', app: app.name, verzija: a.version || version, platforma: LABEL[a.kind], datoteka: a.name }));
       return link;
     });
     const mine = files.find(a => a.kind === device);
     body.querySelector('.skel').replaceWith(buttons.length ? el('div', { className: 'dl' }, ...buttons) : el('p', { className: 'none', textContent: 'Još nema datoteka za preuzimanje.' }));
     if (mine && HINT[device]) body.append(el('p', { className: 'hint', textContent: HINT[device] }));
     else if (!mine && (device === 'ios' || device === 'android' || device === 'mac')) body.append(el('p', { className: 'none', textContent: `Nema verzije za ${LABEL[device]}.` }));
-    const list = notes(rel.body);
+    const list = rel.notes;
     if (list.length) body.append(el('details', {}, el('summary', { textContent: 'Novo u ovoj verziji' }), el('ul', {}, ...list.map(t => el('li', { textContent: t })))));
   }).catch(e => {
     ver.textContent = String(e.message) === '404' ? 'uskoro' : 'GitHub ne odgovara';
