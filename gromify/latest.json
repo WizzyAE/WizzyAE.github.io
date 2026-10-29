@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "app": "Gromify",
+  "version": "1.5.13",
+  "publishedAt": "2026-10-29T21:33:57Z",
+  "notes": [
+    "Nova stranica Moja glazba: zalijepi linkove pjesama i playlista ili cijeli popis pjesama i preuzmi ih kao MP3.",
+    "Podržani su Spotify, YouTube, YouTube Music, Deezer, Apple Music, SoundCloud, Bandcamp, Tidal, Amazon Music i još 1000+ stranica, te CSV/TXT/M3U popisi (npr. iz Exportifyja).",
+    "Preuzimanja čekaju u redu i rade u pozadini, a pjesme se mogu spremiti u playlistu ili samo u biblioteku.",
+    "Nove verzije sada stižu s GitHuba, svima, bez obzira na to je li GROM server upaljen."
+  ],
+  "platforms": {
+    "android": {
+      "version": "1.5.13",
+      "url": "https://github.com/WizzyAE/Gromify/releases/download/v1.5.13/Gromify-Android-1.5.13.apk",
+      "sha256": "da55b71e567d307271d70c31c77631c183b2b4b965f4e0e47ba923aadb68fab8",
+      "bytes": 71460914,
+      "name": "Gromify-Android-1.5.13.apk",
+      "publishedAt": "2026-10-29T21:33:57Z"
+    },
+    "darwin": {
+      "version": "1.5.13",
+      "url": "https://github.com/WizzyAE/Gromify/releases/download/v1.5.13/Gromify-Setup-1.5.13-macOS.zip",
+      "sha256": "5182a9de257ab6b9befd2f0b9cf9ae1c3cb6fff1abdb095802c2d60ab9c0f002",
+      "bytes": 441890489,
+      "name": "Gromify-Setup-1.5.13-macOS.zip",
+      "publishedAt": "2026-10-29T21:33:57Z"
+    },
+    "win32": {
+      "version": "1.5.13",
+      "url": "https://github.com/WizzyAE/Gromify/releases/download/v1.5.13/Gromify-Setup-1.5.13.exe",
+      "sha256": "a533073387ef52cf3a7daaff6f04a13fa2e63f20c219fbefa512539bff4458f1",
+      "bytes": 484299351,
+      "name": "Gromify-Setup-1.5.13.exe",
+      "publishedAt": "2026-10-29T21:33:57Z"
+    }
+  }
+}
