@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "app": "GromGoll",
+  "version": "1.0.0",
+  "publishedAt": "2026-10-29T20:34:51Z",
+  "notes": [],
+  "platforms": {
+    "termux": {
+      "version": "1.0.0",
+      "url": "https://github.com/WizzyAE/GromGoll/releases/download/v1.0.0/GromGoll-Android-Termux-1.0.0.zip",
+      "sha256": "6ff2b0ee357a6bd93e68d7569b5f60a0173608e4eed466a28c6394f23f13cfb0",
+      "bytes": 3787705,
+      "name": "GromGoll-Android-Termux-1.0.0.zip",
+      "publishedAt": "2026-10-29T20:34:51Z"
+    },
+    "win32": {
+      "version": "1.0.0",
+      "url": "https://github.com/WizzyAE/GromGoll/releases/download/v1.0.0/GromGoll-Setup-1.0.0.exe",
+      "sha256": "1e4d9996dc9f9b26264cc3603ff39e670f6ba54916fcf601e232411ea35ca7c9",
+      "bytes": 38871552,
+      "name": "GromGoll-Setup-1.0.0.exe",
+      "publishedAt": "2026-10-29T20:34:51Z"
+    }
+  }
+}
