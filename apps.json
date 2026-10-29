@@ -1,0 +1,11 @@
+{
+  "owner": "WizzyAE",
+  "apps": [
+    {
+      "name": "Gromify",
+      "repo": "Gromify",
+      "desc": "Glazba na PC-u i mobitelu.",
+      "icon": "icons/gromify.png"
+    }
+  ]
+}
