@@ -1,33 +1,36 @@
 {
   "schemaVersion": 1,
   "app": "Gromflix",
-  "version": "0.3.10",
-  "publishedAt": "2026-10-29T20:35:19Z",
-  "notes": [],
+  "version": "0.3.11",
+  "publishedAt": "2026-10-29T21:17:37Z",
+  "notes": [
+    "Nove verzije stižu same na Windows, Mac i Android: Gromflix ponudi nadogradnju čim izađe.",
+    "Svaki paket se prije instalacije provjerava (SHA-256)."
+  ],
   "platforms": {
     "android": {
-      "version": "0.3.5",
-      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.10/Gromflix-Android-0.3.5.apk",
-      "sha256": "6d163323993cd8ff0a821c21951e38728dc35442097cd11a25a213b77eeede6c",
-      "bytes": 30577775,
-      "name": "Gromflix-Android-0.3.5.apk",
-      "publishedAt": "2026-10-29T20:35:19Z"
+      "version": "0.3.11",
+      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.11/Gromflix-Android-0.3.11.apk",
+      "sha256": "a6bf38b44733b1c10a0749509eb5be261024cd1e5b4780c4069193bc3b772eae",
+      "bytes": 30585967,
+      "name": "Gromflix-Android-0.3.11.apk",
+      "publishedAt": "2026-10-29T21:17:37Z"
     },
     "darwin": {
-      "version": "0.3.10",
-      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.10/Gromflix-Setup-0.3.10-macOS-x64.zip",
-      "sha256": "af55ca4cef780e40f7417af9054b1bf1698bf690b2851889beb33ee235386715",
-      "bytes": 220156911,
-      "name": "Gromflix-Setup-0.3.10-macOS-x64.zip",
-      "publishedAt": "2026-10-29T20:35:19Z"
+      "version": "0.3.11",
+      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.11/Gromflix-Setup-0.3.11-macOS-x64.zip",
+      "sha256": "11c4d05b8bd9b7e22a737a5ca5abddc539bfda3a6021364acda49e36865f74c2",
+      "bytes": 215768007,
+      "name": "Gromflix-Setup-0.3.11-macOS-x64.zip",
+      "publishedAt": "2026-10-29T21:17:37Z"
     },
     "win32": {
-      "version": "0.3.10",
-      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.10/Gromflix-Setup-0.3.10-x64.exe",
-      "sha256": "2efc4eddee9bdbc5190481cbece00ff9afcc203da5f39dcde2912951b463b776",
-      "bytes": 261907793,
-      "name": "Gromflix-Setup-0.3.10-x64.exe",
-      "publishedAt": "2026-10-29T20:35:19Z"
+      "version": "0.3.11",
+      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.11/Gromflix-Setup-0.3.11-x64.exe",
+      "sha256": "320d3b5e21f21911f114ff24e79df414050621b94ffa3a543bc7f75fe0a437fe",
+      "bytes": 261908596,
+      "name": "Gromflix-Setup-0.3.11-x64.exe",
+      "publishedAt": "2026-10-29T21:17:37Z"
     }
   }
 }
