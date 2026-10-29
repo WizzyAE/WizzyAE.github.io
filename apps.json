@@ -5,7 +5,22 @@
       "name": "Gromify",
       "repo": "Gromify",
       "desc": "Glazba na PC-u i mobitelu.",
-      "icon": "icons/gromify.png"
+      "icon": "icons/gromify.png",
+      "color": "#1a84ff"
+    },
+    {
+      "name": "Gromflix",
+      "repo": "Gromflix",
+      "desc": "Filmovi i serije.",
+      "icon": "icons/gromflix.png",
+      "color": "#5b6cff"
+    },
+    {
+      "name": "GromGoll",
+      "repo": "GromGoll",
+      "desc": "Sport uživo i TV kanali.",
+      "icon": "icons/gromgoll.png",
+      "color": "#e11844"
     }
   ]
 }
