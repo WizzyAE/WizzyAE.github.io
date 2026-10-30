@@ -4,10 +4,10 @@
   "version": "1.5.13",
   "publishedAt": "2026-10-29T21:33:57Z",
   "notes": [
-    "Nova stranica Moja glazba: zalijepi linkove pjesama i playlista ili cijeli popis pjesama i preuzmi ih kao MP3.",
-    "Podržani su Spotify, YouTube, YouTube Music, Deezer, Apple Music, SoundCloud, Bandcamp, Tidal, Amazon Music i još 1000+ stranica, te CSV/TXT/M3U popisi (npr. iz Exportifyja).",
-    "Preuzimanja čekaju u redu i rade u pozadini, a pjesme se mogu spremiti u playlistu ili samo u biblioteku.",
-    "Nove verzije sada stižu s GitHuba, svima, bez obzira na to je li GROM server upaljen."
+    "Spremi pjesme kao MP3 i slušaj ih u playeru po svom izboru.",
+    "Poveži glazbu s različitih servisa — Spotify, YouTube, SoundCloud, Deezer i mnogih drugih.",
+    "Uvezi cijele popise pjesama iz CSV, TXT i M3U datoteka, uključujući Exportify.",
+    "Preuzimaj u pozadini i spremaj pjesme u svoje playliste ili biblioteku."
   ],
   "platforms": {
     "android": {
