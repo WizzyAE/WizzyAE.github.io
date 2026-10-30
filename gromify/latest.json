@@ -1,37 +1,36 @@
 {
   "schemaVersion": 1,
   "app": "Gromify",
-  "version": "1.5.14",
-  "publishedAt": "2026-10-30T15:38:15Z",
+  "version": "1.5.15",
+  "publishedAt": "2026-10-30T17:21:49Z",
   "notes": [
-    "iPhone i iPad: slušaj Gromify s računala ili Maca preko kućnog Wi-Fi-ja. Upute su u Postavke › Mobitel.",
-    "Playliste i preuzete pjesme usklađuju se između mobitela i računala, na kojem god uređaju ih promijeniš.",
-    "Playliste iz Moje glazbe odmah se preuzimaju i na drugim uređajima."
+    "Moja glazba: zalijepi i 1000+ linkova odjednom, npr. cijelu Spotify playlistu (u Spotifyju Ctrl+A, Ctrl+C). Pjesme se preuzimaju po tri odjednom i ostaju istim redom.",
+    "iPhone i iPad sami preuzimaju izgled, pozadinu i postavke s računala; playliste i pjesme već su iste."
   ],
   "platforms": {
     "android": {
-      "version": "1.5.14",
-      "url": "https://github.com/WizzyAE/Gromify/releases/download/v1.5.14/Gromify-Android-1.5.14.apk",
-      "sha256": "cc3725b104aabb9a0e6653d08fdcfdb467828be8fcafc4587a1f0540a807078f",
+      "version": "1.5.15",
+      "url": "https://github.com/WizzyAE/Gromify/releases/download/v1.5.15/Gromify-Android-1.5.15.apk",
+      "sha256": "4b2bfc3cc6dee930c9093f154929543b15ef7bac3da520a61a4f176d7e8e146d",
       "bytes": 71465010,
-      "name": "Gromify-Android-1.5.14.apk",
-      "publishedAt": "2026-10-30T15:38:15Z"
+      "name": "Gromify-Android-1.5.15.apk",
+      "publishedAt": "2026-10-30T17:21:49Z"
     },
     "darwin": {
-      "version": "1.5.14",
-      "url": "https://github.com/WizzyAE/Gromify/releases/download/v1.5.14/Gromify-Setup-1.5.14-macOS.zip",
-      "sha256": "9db4099d6b8afc805ffc298aa53c83ad468ccc954d9ea97859b17eef68826bf8",
-      "bytes": 441893359,
-      "name": "Gromify-Setup-1.5.14-macOS.zip",
-      "publishedAt": "2026-10-30T15:38:15Z"
+      "version": "1.5.15",
+      "url": "https://github.com/WizzyAE/Gromify/releases/download/v1.5.15/Gromify-Setup-1.5.15-macOS.zip",
+      "sha256": "2618b0de354c327a280f5e0cb3a65473419f857b112849af1d8ac4f7ab315cb6",
+      "bytes": 441897086,
+      "name": "Gromify-Setup-1.5.15-macOS.zip",
+      "publishedAt": "2026-10-30T17:21:49Z"
     },
     "win32": {
-      "version": "1.5.14",
-      "url": "https://github.com/WizzyAE/Gromify/releases/download/v1.5.14/Gromify-Setup-1.5.14.exe",
-      "sha256": "bc000cadd5daf553493d1ef7115531f11e275065b1797322e516a4cdab79fc5b",
-      "bytes": 484303648,
-      "name": "Gromify-Setup-1.5.14.exe",
-      "publishedAt": "2026-10-30T15:38:15Z"
+      "version": "1.5.15",
+      "url": "https://github.com/WizzyAE/Gromify/releases/download/v1.5.15/Gromify-Setup-1.5.15.exe",
+      "sha256": "415fd4dfbad8caf6dc8af4af1476c73a9408cb9abacd4a15278d3ff7f76c7918",
+      "bytes": 484308299,
+      "name": "Gromify-Setup-1.5.15.exe",
+      "publishedAt": "2026-10-30T17:21:49Z"
     }
   }
 }
