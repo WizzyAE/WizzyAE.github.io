@@ -13,14 +13,16 @@
       "repo": "Gromflix",
       "desc": "Filmovi i serije.",
       "icon": "icons/gromflix.png",
-      "color": "#5b6cff"
+      "color": "#5b6cff",
+      "uskoro": true
     },
     {
       "name": "GromGoll",
       "repo": "GromGoll",
       "desc": "Sport uživo i TV kanali.",
       "icon": "icons/gromgoll.png",
-      "color": "#e11844"
+      "color": "#e11844",
+      "uskoro": true
     }
   ]
 }
