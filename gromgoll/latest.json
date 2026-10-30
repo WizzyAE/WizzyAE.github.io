@@ -8,6 +8,14 @@
     "Na Androidu (Termux) se nova verzija preuzme sama i instalira pri sljedećem pokretanju."
   ],
   "platforms": {
+    "android": {
+      "version": "1.0.1",
+      "url": "https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Android-1.0.1.apk",
+      "sha256": "b54eccfadb6d42feded551fdae8a72273032925e2b06a339e672bb3fa6202a1b",
+      "bytes": 5031906,
+      "name": "GromGoll-Android-1.0.1.apk",
+      "publishedAt": "2026-10-29T21:16:33Z"
+    },
     "termux": {
       "version": "1.0.1",
       "url": "https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Android-Termux-1.0.1.zip",
