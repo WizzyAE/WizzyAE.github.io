@@ -80,6 +80,16 @@
   details li { margin: 4px 0; }
   footer { padding: 0 0 calc(32px + env(safe-area-inset-bottom)); color: var(--faint); font-size: 12.5px; text-align: center; }
 
+  /* Shown on every download click; the download itself has already started. */
+  dialog { width: min(340px, calc(100% - 32px)); padding: 28px 22px 22px; border-radius: 20px; text-align: center;
+    color: var(--text); background: var(--panel-2); border: 1px solid var(--line); }
+  dialog::backdrop { background: rgba(3, 6, 15, .7); }
+  dialog .big { font-size: 56px; line-height: 1; }
+  dialog h3 { margin: 12px 0 6px; font-size: 22px; }
+  dialog p { margin: 0 0 18px; color: var(--muted); }
+  dialog button { width: 100%; min-height: 46px; border: 0; border-radius: 12px; font: inherit; font-weight: 600;
+    color: #fff; background: #1a84ff; cursor: pointer; }
+
   @media (max-width: 640px) {
     header { padding: 32px 0 20px; }
     /* Icon beside the name; everything else full width. */
@@ -106,6 +116,12 @@
   <section class="apps" id="apps"></section>
 </main>
 <footer class="wrap">GROM</footer>
+<dialog id="sendvic">
+  <div class="big">🥪</div>
+  <h3>Dužan si mi sendvič!</h3>
+  <p>Preuzimanje je krenulo.</p>
+  <form method="dialog"><button>Dogovoreno</button></form>
+</dialog>
 <!-- Written by objavi.mjs from apps.json and each app's latest.json, so the page needs no further requests. -->
 <script id="data" type="application/json">{"owner":"WizzyAE","apps":[{"name":"Gromify","repo":"Gromify","desc":"Glazba na PC-u i mobitelu.","icon":"icons/gromify.png","color":"#1a84ff","latest":{"schemaVersion":1,"app":"Gromify","version":"1.5.13","publishedAt":"2026-10-29T21:33:57Z","notes":["Nova stranica Moja glazba: zalijepi linkove pjesama i playlista ili cijeli popis pjesama i preuzmi ih kao MP3.","Podržani su Spotify, YouTube, YouTube Music, Deezer, Apple Music, SoundCloud, Bandcamp, Tidal, Amazon Music i još 1000+ stranica, te CSV/TXT/M3U popisi (npr. iz Exportifyja).","Preuzimanja čekaju u redu i rade u pozadini, a pjesme se mogu spremiti u playlistu ili samo u biblioteku.","Nove verzije sada stižu s GitHuba, svima, bez obzira na to je li GROM server upaljen."],"platforms":{"android":{"version":"1.5.13","url":"https://github.com/WizzyAE/Gromify/releases/download/v1.5.13/Gromify-Android-1.5.13.apk","sha256":"da55b71e567d307271d70c31c77631c183b2b4b965f4e0e47ba923aadb68fab8","bytes":71460914,"name":"Gromify-Android-1.5.13.apk","publishedAt":"2026-10-29T21:33:57Z"},"darwin":{"version":"1.5.13","url":"https://github.com/WizzyAE/Gromify/releases/download/v1.5.13/Gromify-Setup-1.5.13-macOS.zip","sha256":"5182a9de257ab6b9befd2f0b9cf9ae1c3cb6fff1abdb095802c2d60ab9c0f002","bytes":441890489,"name":"Gromify-Setup-1.5.13-macOS.zip","publishedAt":"2026-10-29T21:33:57Z"},"win32":{"version":"1.5.13","url":"https://github.com/WizzyAE/Gromify/releases/download/v1.5.13/Gromify-Setup-1.5.13.exe","sha256":"a533073387ef52cf3a7daaff6f04a13fa2e63f20c219fbefa512539bff4458f1","bytes":484299351,"name":"Gromify-Setup-1.5.13.exe","publishedAt":"2026-10-29T21:33:57Z"}}}},{"name":"Gromflix","repo":"Gromflix","desc":"Filmovi i serije.","icon":"icons/gromflix.png","color":"#5b6cff","uskoro":true,"latest":{"schemaVersion":1,"app":"Gromflix","version":"0.3.11","publishedAt":"2026-10-29T21:17:37Z","notes":["Nove verzije stižu same na Windows, Mac i Android: Gromflix ponudi nadogradnju čim izađe.","Svaki paket se prije instalacije provjerava (SHA-256)."],"platforms":{"android":{"version":"0.3.11","url":"https://github.com/WizzyAE/Gromflix/releases/download/v0.3.11/Gromflix-Android-0.3.11.apk","sha256":"a6bf38b44733b1c10a0749509eb5be261024cd1e5b4780c4069193bc3b772eae","bytes":30585967,"name":"Gromflix-Android-0.3.11.apk","publishedAt":"2026-10-29T21:17:37Z"},"darwin":{"version":"0.3.11","url":"https://github.com/WizzyAE/Gromflix/releases/download/v0.3.11/Gromflix-Setup-0.3.11-macOS-x64.zip","sha256":"11c4d05b8bd9b7e22a737a5ca5abddc539bfda3a6021364acda49e36865f74c2","bytes":215768007,"name":"Gromflix-Setup-0.3.11-macOS-x64.zip","publishedAt":"2026-10-29T21:17:37Z"},"win32":{"version":"0.3.11","url":"https://github.com/WizzyAE/Gromflix/releases/download/v0.3.11/Gromflix-Setup-0.3.11-x64.exe","sha256":"320d3b5e21f21911f114ff24e79df414050621b94ffa3a543bc7f75fe0a437fe","bytes":261908596,"name":"Gromflix-Setup-0.3.11-x64.exe","publishedAt":"2026-10-29T21:17:37Z"}}}},{"name":"GromGoll","repo":"GromGoll","desc":"Sport uživo i TV kanali.","icon":"icons/gromgoll.png","color":"#e11844","uskoro":true,"latest":{"schemaVersion":1,"app":"GromGoll","version":"1.0.1","publishedAt":"2026-10-29T21:16:33Z","notes":["Nove verzije stižu same: kad izađe novija, GromGoll ponudi Ažuriraj.","Na Androidu (Termux) se nova verzija preuzme sama i instalira pri sljedećem pokretanju."],"platforms":{"termux":{"version":"1.0.1","url":"https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Android-Termux-1.0.1.zip","sha256":"136b352cc13db9c811b0dc3cd132877b4572cf93475424e9ff5d9b46b556f36c","bytes":3790515,"name":"GromGoll-Android-Termux-1.0.1.zip","publishedAt":"2026-10-29T21:16:33Z"},"win32":{"version":"1.0.1","url":"https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Setup-1.0.1.exe","sha256":"39b87917ee3755fe7aa520ce138fcbcd136466da34d3ecdb6f49cd0cf813777d","bytes":38875136,"name":"GromGoll-Setup-1.0.1.exe","publishedAt":"2026-10-29T21:16:33Z"},"termux-update":{"version":"1.0.1","url":"https://github.com/WizzyAE/GromGoll/releases/download/v1.0.1/GromGoll-Termux-1.0.1.tar","sha256":"a415efdb6b974ef0a9ae2b2f8846e8be0517c304f05f7896225d551d79253eb7","bytes":7227904,"name":"GromGoll-Termux-1.0.1.tar","publishedAt":"2026-10-29T21:16:33Z"}}}}]}</script>
 <script>
@@ -156,7 +172,12 @@ function card(app) {
     const extra = [size(f.bytes), f.version !== feed.version ? 'verzija ' + f.version : '', f.termux ? 'Termux' : ''].filter(Boolean).join(' · ');
     const link = el('a', { className: 'btn' + (f === mine || (!mine && i === 0) ? ' main' : ''), href: f.url },
       svg(ICONS[f.kind]), el('span', {}, el('strong', { textContent: LABEL[f.kind] }), el('small', { textContent: extra })));
-    link.addEventListener('click', () => log({ radnja: 'preuzimanje', app: app.name, verzija: f.version, platforma: LABEL[f.kind], datoteka: f.name }));
+    link.addEventListener('click', () => {
+      log({ radnja: 'preuzimanje', app: app.name, verzija: f.version, platforma: LABEL[f.kind], datoteka: f.name });
+      const popup = document.getElementById('sendvic');
+      // After the click, so the browser starts the download first.
+      setTimeout(() => { try { popup.showModal(); } catch { popup.setAttribute('open', ''); } }, 300);
+    });
     return link;
   });
   const box = el('article', { className: 'app' },
