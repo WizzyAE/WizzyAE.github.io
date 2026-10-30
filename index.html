@@ -165,7 +165,9 @@ function log(entry) {
 function card(app) {
   // "uskoro" in apps.json hides the downloads; the feed stays live so installed copies keep updating.
   const feed = app.uskoro ? null : app.latest;
-  const files = feed ? Object.entries(feed.platforms).map(([p, f]) => ({ ...f, kind: KIND[p], termux: p === 'termux' })).filter(f => f.kind) : [];
+  // An APK replaces the Termux package as the Android download; Termux installs still update from the feed.
+  const files = feed ? Object.entries(feed.platforms).map(([p, f]) => ({ ...f, kind: KIND[p], termux: p === 'termux' }))
+    .filter(f => f.kind && !(f.termux && feed.platforms.android)) : [];
   files.sort((a, b) => (b.kind === device) - (a.kind === device));
   const mine = files.find(f => f.kind === device);
   const buttons = files.map((f, i) => {
