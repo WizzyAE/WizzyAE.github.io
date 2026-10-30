@@ -21,7 +21,8 @@
       "repo": "GromGoll",
       "desc": "Sport uživo i TV kanali.",
       "icon": "icons/gromgoll.png",
-      "color": "#e11844"
+      "color": "#e11844",
+      "uskoro": true
     }
   ]
 }
