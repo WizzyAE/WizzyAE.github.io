@@ -1,0 +1,1 @@
+import{p as u,b as a}from"./index-Ctd3yghH.js";function g(d,r){var c;const{kind:e,genre:i,context:s}=d,o=u(e,i,s.kids,s,r),n=a(e,i,{...s,excludeIds:[...(c=s.excludeIds)!=null?c:[],...o?[o.id]:[]]},r);return{id:d.id,heroId:o==null?void 0:o.id,rows:n.map(({items:p,progress:w,...t})=>({...t,items:p.map(m=>m.id)}))}}export{g as computeBrowse};

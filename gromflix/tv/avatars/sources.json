@@ -1,0 +1,92 @@
+[
+  {
+    "id": "spider-man",
+    "page": "https://pngimg.com/image/28980",
+    "source": "https://pngimg.com/uploads/spider_man/spider_man_PNG98.png",
+    "sourceLicense": "CC BY-NC 4.0 (as declared by PNGimg; character rights remain with their owners)",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "changes": "Resized and padded to 384x384 with transparent alpha",
+    "bytes": 156867,
+    "sha256": "de4c6b9774bb82853d5f9d1eff2398840516d9ed6e61f456381ffba5c11a95ca"
+  },
+  {
+    "id": "deadpool",
+    "page": "https://pngimg.com/image/63334",
+    "source": "https://pngimg.com/uploads/deadpool/deadpool_PNG105.png",
+    "sourceLicense": "CC BY-NC 4.0 (as declared by PNGimg; character rights remain with their owners)",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "changes": "Resized and padded to 384x384 with transparent alpha",
+    "bytes": 224715,
+    "sha256": "a108e0cf175eef6d83a9c93011a9344176169d8722ecf7f256674296b0cdde37"
+  },
+  {
+    "id": "iron-man",
+    "page": "https://pngimg.com/image/29614",
+    "source": "https://pngimg.com/uploads/ironman/ironman_PNG21.png",
+    "sourceLicense": "CC BY-NC 4.0 (as declared by PNGimg; character rights remain with their owners)",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "changes": "Resized and padded to 384x384 with transparent alpha",
+    "bytes": 193440,
+    "sha256": "69acd1ee921789aabdafed9686d2892a5e06b031e2ad67d779e1da75eea66bbe"
+  },
+  {
+    "id": "darth-vader",
+    "page": "https://pngimg.com/image/28364",
+    "source": "https://pngimg.com/uploads/darth_vader/darth_vader_PNG35.png",
+    "sourceLicense": "CC BY-NC 4.0 (as declared by PNGimg; character rights remain with their owners)",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "changes": "Resized and padded to 384x384 with transparent alpha",
+    "bytes": 97900,
+    "sha256": "ff5f1e9483648566fd0d0ccdc3350b3d19fea01e0bde2acc5a6a0708ad7fd62c"
+  },
+  {
+    "id": "yoda",
+    "page": "https://pngimg.com/image/109482",
+    "source": "https://pngimg.com/uploads/yoda/yoda_PNG60.png",
+    "sourceLicense": "CC BY-NC 4.0 (as declared by PNGimg; character rights remain with their owners)",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "changes": "Resized and padded to 384x384 with transparent alpha",
+    "bytes": 122972,
+    "sha256": "660492c1422ac738debeda85a8e897cd6d6b43d3d079a03993dd383cca17c63e"
+  },
+  {
+    "id": "chewbacca",
+    "page": "https://pngimg.com/image/28398",
+    "source": "https://pngimg.com/uploads/starwars/starwars_PNG34.png",
+    "sourceLicense": "CC BY-NC 4.0 (as declared by PNGimg; character rights remain with their owners)",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "changes": "Resized and padded to 384x384 with transparent alpha",
+    "bytes": 203443,
+    "sha256": "e126ac84c18185ccfb132e9ce0cd7fe0b1128b1de478c870491f8c7e17b83183"
+  },
+  {
+    "id": "stitch",
+    "page": "https://pngimg.com/image/109292",
+    "source": "https://pngimg.com/uploads/stitch/stitch_PNG70.png",
+    "sourceLicense": "CC BY-NC 4.0 (as declared by PNGimg; character rights remain with their owners)",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "changes": "Resized and padded to 384x384 with transparent alpha",
+    "bytes": 188045,
+    "sha256": "7367e737a0ededc0bee8de167145852517355627c0f25b8b9409ba333d180c27"
+  },
+  {
+    "id": "mickey",
+    "page": "https://pngimg.com/image/29501",
+    "source": "https://pngimg.com/uploads/mickey_mouse/mickey_mouse_PNG95.png",
+    "sourceLicense": "CC BY-NC 4.0 (as declared by PNGimg; character rights remain with their owners)",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "changes": "Resized and padded to 384x384 with transparent alpha",
+    "bytes": 16086,
+    "sha256": "d89487884ab994f4d036021e88e208f29c56f9c54512d194b28d6dc6213e77e5"
+  },
+  {
+    "id": "elsa",
+    "page": "https://pngimg.com/image/86936",
+    "source": "https://pngimg.com/uploads/frozen/frozen_PNG104.png",
+    "sourceLicense": "CC BY-NC 4.0 (as declared by PNGimg; character rights remain with their owners)",
+    "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "changes": "Resized and padded to 384x384 with transparent alpha",
+    "bytes": 87560,
+    "sha256": "1f06349765a34f1af08b69fbc1850f10ef4f25c56d49ececa4cd156670fc9a4f"
+  }
+]
