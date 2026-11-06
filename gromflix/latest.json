@@ -1,40 +1,46 @@
 {
   "schemaVersion": 1,
   "app": "Gromflix",
-  "version": "0.3.20",
-  "publishedAt": "2026-11-05T19:42:48Z",
+  "version": "0.3.22",
+  "publishedAt": "2026-11-06T11:03:49Z",
   "notes": [
-    "Pretraga po opisu i filtrima. Upiši „napeti film do dva sata” ili kombiniraj vrstu sadržaja, žanrove, godinu i trajanje. Pretraga prepoznaje česte tipfelere u naslovima. Unosi `1:30h`, `1,5h` i `90 min` traže naslove oko zadanog trajanja. Kod serija se računa trajanje epizode.",
-    "Preskakanje uvoda i špice. Oznake se provjeravaju zasebno za svaku epizodu. Gumb Sljedeća epizoda može se pojaviti ranije uz pouzdane oznake početka špice. Prijelaz uzima u obzir dodatne scene nakon špice.",
-    "Kontrole reprodukcije. Dodani su plutajući prozor za video, pregled kadrova na vremenskoj traci kada ih izvor podržava i priprema podataka o idućoj epizodi tijekom gledanja.",
-    "Zvuk i titlovi. Zadani su engleski zvuk i hrvatski titlovi. Kad hrvatski zapis nedostaje ili se ne učita, player traži drugu verziju pa po potrebi nudi engleski zapis. Dodane su prilagodljiva veličina titlova i lokalna govorna analiza za pomoć pri sinkronizaciji. Ručni odabir i pomak titlova dostupni su u playeru.",
-    "Oporavak reprodukcije. Zaglavljeni zahtjevi ranije se prekidaju, player se može vratiti na izvor koji je naknadno postao dostupan, a lokalna dijagnostika pomaže u otkrivanju zastoja.",
-    "Povezivanje uređaja na kućnoj mreži. Na iPhoneu se otvara mobilni prikaz u Safariju, a za Hisense VIDAA koristi se TV preglednik s nastavkom `/tv` na adresi računala. Oba prikaza podržavaju povezivanje osmeroznamenkastim kodom. Fokus pri kretanju daljinskim vidljiv je na kontrolama."
+    "**Brže otvaranje na Windowsu.** U jednom mjerenju na testnom profilu prve kartice pojavile su se za 121 ms umjesto 306 ms, a prva slika za 166 ms umjesto 345 ms.",
+    "**Manje opterećenja pri pokretanju na Windowsu.** Lokalni AI model pokreće se 20 sekundi nakon otvaranja aplikacije i radi s nižim prioritetom.",
+    "**Izbor izvora na Windowsu.** Prednost imaju H.264 `.mkv` izvori, traži se više peerova, a WMV izvori idu na kraj popisa.",
+    "**NVENC na Windowsu.** Računala s NVIDIA karticom pretvaraju HEVC video pomoću grafičke kartice.",
+    "**Mobitel.** Android izdanje prelazi s 0.3.11 na 0.3.22 i uključuje promjene učitavanja za mobilni HLS.",
+    "**Mac.** Paket je za Apple Silicon (arm64). Nije za Intel Mac, nema Apple potpis i nije testiran na Macu.",
+    "Pokretanje filma i dalje ovisi o izvorima. U zadnjem mjerenju 10 filmova medijan je bio 17,1 s, a 2 filma nisu krenula unutar 30 s.",
+    "Film koji ima samo WMV izvore možda neće krenuti na računalu s NVENC-om.",
+    "Android je samo instaliran i pokrenut na jednom mobitelu, a reprodukcija filma na njemu nije testirana.",
+    "**Windows 64-bitni** — `Gromflix-Setup-0.3.22-x64.exe`",
+    "**Android** — `Gromflix-Android-0.3.22.apk`",
+    "**macOS Apple Silicon** — `Gromflix-Setup-0.3.22-macOS-arm64.zip`"
   ],
   "platforms": {
     "android": {
-      "version": "0.3.11",
-      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.20/Gromflix-Android-0.3.11.apk",
-      "sha256": "a6bf38b44733b1c10a0749509eb5be261024cd1e5b4780c4069193bc3b772eae",
-      "bytes": 30585967,
-      "name": "Gromflix-Android-0.3.11.apk",
-      "publishedAt": "2026-11-05T19:42:48Z"
+      "version": "0.3.22",
+      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.22/Gromflix-Android-0.3.22.apk",
+      "sha256": "3eaeee8ed3c5e2ed3aa709ebd734d81140f5c823b9f462359469fbe4f07545cb",
+      "bytes": 46720945,
+      "name": "Gromflix-Android-0.3.22.apk",
+      "publishedAt": "2026-11-06T11:03:49Z"
     },
     "darwin": {
-      "version": "0.3.11",
-      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.20/Gromflix-Setup-0.3.11-macOS-x64.zip",
-      "sha256": "11c4d05b8bd9b7e22a737a5ca5abddc539bfda3a6021364acda49e36865f74c2",
-      "bytes": 215768007,
-      "name": "Gromflix-Setup-0.3.11-macOS-x64.zip",
-      "publishedAt": "2026-11-05T19:42:48Z"
+      "version": "0.3.22",
+      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.22/Gromflix-Setup-0.3.22-macOS-arm64.zip",
+      "sha256": "9fbaca161d34bd3c9d51c756252687017a301d9dda90b04a48666a5bd4610c22",
+      "bytes": 227812319,
+      "name": "Gromflix-Setup-0.3.22-macOS-arm64.zip",
+      "publishedAt": "2026-11-06T11:03:49Z"
     },
     "win32": {
-      "version": "0.3.20",
-      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.20/Gromflix-Setup-0.3.20-x64.exe",
-      "sha256": "a3f594bc834c924cafef40105a7192118ce06b80ba1784e47554e4d1348276f5",
-      "bytes": 893452216,
-      "name": "Gromflix-Setup-0.3.20-x64.exe",
-      "publishedAt": "2026-11-05T19:42:48Z"
+      "version": "0.3.22",
+      "url": "https://github.com/WizzyAE/Gromflix/releases/download/v0.3.22/Gromflix-Setup-0.3.22-x64.exe",
+      "sha256": "203c6dfbdeb9f7e4f1920c71d81f6f92942d4493752104129c170e3eb6f6735b",
+      "bytes": 909276310,
+      "name": "Gromflix-Setup-0.3.22-x64.exe",
+      "publishedAt": "2026-11-06T11:03:49Z"
     }
   }
 }
